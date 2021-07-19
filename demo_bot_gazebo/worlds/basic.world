@@ -1,0 +1,101 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+<world name="default">
+
+<!--<physics type="ode">
+      <ode>
+        <solver>
+          <type>world</type>
+        </solver>
+        <constraints>
+          <contact_max_correcting_vel>0.1</contact_max_correcting_vel>
+          <contact_surface_layer>0.0001</contact_surface_layer>
+        </constraints>
+      </ode>
+      <max_step_size>0.001</max_step_size>
+    </physics>
+  -->
+  <light type="point" name="point">
+    <pose>0 2 2 0 0 0</pose>
+    <diffuse>1 0 0 1</diffuse>
+    <specular>.1 .1 .1 1</specular>
+    <attenuation>
+      <range>20</range>
+      <linear>0.2</linear>
+      <constant>0.8</constant>
+      <quadratic>0.01</quadratic>
+    </attenuation>
+    <cast_shadows>false</cast_shadows>
+  </light>
+
+  <include>
+    <uri>model://sun</uri>
+  </include>
+  <include>
+    <uri>model://ground_plane</uri>
+  </include>
+  <include>
+    <uri>model://postbox</uri>
+  </include>
+   <include>
+    <uri>model://gas</uri>
+  </include>
+  <include>
+    <uri>model://double_pendulum_with_base</uri>
+    <name>pendulum_thick_mud</name>
+    <pose>-3.0 0 0 0 0 0</pose>
+  </include>
+  <include>
+    <uri>model://gas_station</uri>
+    <name>gas_station</name>
+    <pose>-2.0 7.0 0 0 0 0</pose>
+  </include>
+  <include>
+    <uri>model://radio_tower</uri>
+    <name>radio tower</name>
+    <pose>-1.0 30.0 0 0 0 0</pose>
+  </include>
+  <include>
+    <uri>model://gazebo</uri>
+    <name>gazebo</name>
+    <pose>13 -13.0 0.0 0 0 0</pose>
+  </include>
+  <include>
+    <uri>model://oak_tree</uri>
+    <name>oak tree</name>
+    <pose>10.0 0 0 0 0 0</pose>
+  </include>
+  <include>
+    <uri>model://powerplant</uri>
+    <name>powerplant</name>
+    <pose>0 -60.0 0.0 0 0 0</pose>
+  </include>
+  <include>
+    <uri>model://table</uri>
+    <name>table</name>
+    <pose>5.0 -5.0 0.0 0 0 0</pose>
+  </include>
+  <model name="box">
+    <pose>5 0 0.5 0 0 0</pose>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>1 1 1</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>1 1 1</size>
+          </box>
+        </geometry>
+        <material>
+          <script>Gazebo/WoodPallet</script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</world>
+</sdf>
